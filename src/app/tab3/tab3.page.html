@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Einstellungen
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredSparten()"></ion-searchbar>
+  <ion-list>
+    <ion-list-header>Bereitschaftsspartenauswahl</ion-list-header>
+    <ion-reorder-group (ionItemReorder)="onReorderSparte($event)" disabled="false">
+      <ion-item style="font-size: 12px" *ngFor="let sparte of sparten">
+        <ion-checkbox slot="start" color="secondary" (ionChange)="updateSparte(sparte)" [(ngModel)]="sparte.checked" id="{{sparte.id}}"></ion-checkbox>      
+        <ion-label [ngStyle]="{'color':sparte.new === true ? 'red' : '#33649e'}">{{ sparte.titel }}</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>  
+</ion-content>
