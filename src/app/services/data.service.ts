@@ -73,6 +73,21 @@ export class DataService {
       id: 5001,
       spartefk: 1001,
       name: 'Jürgen Jung',
+      date: '2019-08-01T00:00:00.000Z',
+      timestart: '00:00',
+      timeend: '24:00',
+      tel1a: '+49 123 966911',
+      tel2a: '',
+      tel3a: '+49 176 92345113',
+      tel1b: '+49 123 954312',
+      tel2b: '+49 171 9727622',
+      tel3b: '+49 176 9234532',
+      mail: 'juergen.jung@firma.com'
+    },
+    {
+      id: 5001,
+      spartefk: 1001,
+      name: 'Jürgen Jung',
       date: '2019-08-02T00:00:00.000Z',
       timestart: '00:00',
       timeend: '24:00',
@@ -233,6 +248,81 @@ export class DataService {
       tel2b: '+49 171 9727622',
       tel3b: '+49 176 9234532',
       mail: 'juergen.jung@firma.com'
+    },
+    {
+      id: 5011,
+      spartefk: 1001,
+      name: 'Jürgen Jung',
+      date: '2019-08-05T00:00:00.000',
+      timestart: '00:00',
+      timeend: '24:00',
+      tel1a: '+49 123 966911',
+      tel2a: '',
+      tel3a: '+49 176 92345113',
+      tel1b: '+49 123 954312',
+      tel2b: '+49 171 9727622',
+      tel3b: '+49 176 9234532',
+      mail: 'juergen.jung@firma.com'
+    },
+    {
+      id: 5011,
+      spartefk: 1001,
+      name: 'Jürgen Jung',
+      date: '2019-08-06T00:00:00.000',
+      timestart: '00:00',
+      timeend: '24:00',
+      tel1a: '+49 123 966911',
+      tel2a: '',
+      tel3a: '+49 176 92345113',
+      tel1b: '+49 123 954312',
+      tel2b: '+49 171 9727622',
+      tel3b: '+49 176 9234532',
+      mail: 'juergen.jung@firma.com'
+    },
+    {
+      id: 5011,
+      spartefk: 1001,
+      name: 'Jürgen Jung',
+      date: '2019-08-07T00:00:00.000',
+      timestart: '00:00',
+      timeend: '24:00',
+      tel1a: '+49 123 966911',
+      tel2a: '',
+      tel3a: '+49 176 92345113',
+      tel1b: '+49 123 954312',
+      tel2b: '+49 171 9727622',
+      tel3b: '+49 176 9234532',
+      mail: 'juergen.jung@firma.com'
+    },
+    {
+      id: 5011,
+      spartefk: 1001,
+      name: 'Jürgen Jung',
+      date: '2019-08-08T00:00:00.000',
+      timestart: '00:00',
+      timeend: '24:00',
+      tel1a: '+49 123 966911',
+      tel2a: '',
+      tel3a: '+49 176 92345113',
+      tel1b: '+49 123 954312',
+      tel2b: '+49 171 9727622',
+      tel3b: '+49 176 9234532',
+      mail: 'juergen.jung@firma.com'
+    },
+    {
+      id: 5011,
+      spartefk: 1001,
+      name: 'Jürgen Jung',
+      date: '2019-08-09T00:00:00.000',
+      timestart: '00:00',
+      timeend: '24:00',
+      tel1a: '+49 123 966911',
+      tel2a: '',
+      tel3a: '+49 176 92345113',
+      tel1b: '+49 123 954312',
+      tel2b: '+49 171 9727622',
+      tel3b: '+49 176 9234532',
+      mail: 'juergen.jung@firma.com'
     }
   ];
 
@@ -249,6 +339,11 @@ export class DataService {
   getBereitschaftenBySparte(myfilter) {
     return this.bereitschaften.filter(item => myfilter.includes(item.spartefk));
     // return this.items.filter(item => !myfilter.includes(item.spartefk));
+  }
+
+  getBereitschaftenBySparteDate(myfilter, myDate) {
+    const bereitschaftDate = this.bereitschaften.filter( item => item.date === myDate);
+    return bereitschaftDate.filter(item => myfilter.includes(item.spartefk));
   }
 
   updateBereitschaften(newValues) {

@@ -14,7 +14,6 @@ export class Tab2Page implements OnInit  {
 
   constructor(private dataService: DataService, private router: Router) {}
 
-
   ngOnInit(): void {
     this.bereitschaften = this.dataService.getBereitschaften();
     // Nur das Datum aus Array Bereitschaften in Array myFilter schreiben
@@ -25,7 +24,9 @@ export class Tab2Page implements OnInit  {
     this.bereitschaftsDates = [...myReduced];
   }
 
-
+  buttonClick(date) {
+    console.log('Datum gewählt');
+  }
 
 
 }
