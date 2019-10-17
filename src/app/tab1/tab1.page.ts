@@ -15,17 +15,11 @@ export class Tab1Page implements OnInit {
   constructor(private dataService: DataService, private router: Router) {}
 
   reRead() {
-    this.bereitschaften = this.dataService.getBereitschaften();
-    this.sparten = this.dataService.getMarkedSparten();
+    this.getData();
   }
 
   ngOnInit(): void {
-    this.sparten = this.dataService.getMarkedSparten();
-    // ID der markierten Sparten ermitteln
-    const myFilter = this.sparten.map(filter => filter.id);
-    // Alle Bereitschaften zu den markierten Sparten holen
-    // this.bereitschaften = this.dataService.getBereitschaftenBySparte(myFilter);
-    this.bereitschaften = this.dataService.getBereitschaftenBySparteDate(myFilter, '2019-08-02T00:00:00.000Z' );
+    this.getData();
   }
 
   openDetail(id): void {
@@ -34,6 +28,15 @@ export class Tab1Page implements OnInit {
 
   dialNumber(number): void {
 
+  }
+
+  getData() {
+    this.sparten = this.dataService.getMarkedSparten();
+    // ID der markierten Sparten ermitteln
+    const myFilter = this.sparten.map(filter => filter.id);
+    // Alle Bereitschaften zu den markierten Sparten holen
+    // this.bereitschaften = this.dataService.getBereitschaftenBySparte(myFilter);
+    this.bereitschaften = this.dataService.getBereitschaftenBySparteDate(myFilter, '2019-08-02T00:00:00.000Z' );
   }
 
 }

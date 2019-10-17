@@ -10,8 +10,8 @@
   <ion-list>
     <ion-item (click)="buttonClick(date)" *ngFor="let date of bereitschaftsDates">
       <!--<ion-datetime displayFormat="DDDD DD.MM.YYYY" value="2019-08-03T00:00:00.000Z"></ion-datetime>-->
-      <ion-datetime displayFormat="DDDD DD.MM.YYYY" value="{{date}}"></ion-datetime>
-      <ion-label>Tst</ion-label>
+      <!--<ion-datetime displayFormat="DDDD DD.MM.YYYY" value="{{date}}"></ion-datetime>-->
+      {{date | date: 'dd.MM.yyyy'}}
     </ion-item>
   </ion-list>  
 </ion-content>
