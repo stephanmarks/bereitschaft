@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredSparten()"></ion-searchbar>
+  <ion-searchbar placeholder="finden" [(ngModel)]="searchTerm" (ionChange)="setFilteredSparten()"></ion-searchbar>
   <ion-list>
     <ion-list-header>Bereitschaftsspartenauswahl</ion-list-header>
     <ion-reorder-group (ionItemReorder)="onReorderSparte($event)" disabled="false">
