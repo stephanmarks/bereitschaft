@@ -36,7 +36,7 @@ export class Tab1Page implements OnInit {
     const myFilter = this.sparten.map(filter => filter.id);
     // Alle Bereitschaften zu den markierten Sparten holen
     // this.bereitschaften = this.dataService.getBereitschaftenBySparte(myFilter);
-    this.bereitschaften = this.dataService.getBereitschaftenBySparteDate(myFilter, '2019-08-02T00:00:00.000Z' );
+    this.bereitschaften = this.dataService.getBereitschaftenBySparteDate(myFilter, '2020-12-02T00:00:00.000Z' );
   }
 
 }
