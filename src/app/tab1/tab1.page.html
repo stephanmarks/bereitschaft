@@ -1,45 +1,47 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-item slot="start" color="primary">
-        <ion-label>Bereitschaft Fr. 02.12.2020</ion-label>
-    </ion-item>
-    <ion-buttons slot="end">
-      <ion-button (click)="reRead()">
-        <ion-icon name="refresh" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+	<ion-toolbar color="primary">
+		<ion-item slot="start" color="primary">
+			<ion-label>Bereitschaft Fr. 02.12.2020</ion-label>
+		</ion-item>
+		<ion-buttons slot="end">
+			<ion-button (click)="reRead()">
+				<ion-icon name="refresh" slot="icon-only"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let sparte of sparten">
-    <ion-card>
-      <ion-item color="secondary">
-        <ion-label>{{sparte.titel}}</ion-label>
-        <ion-buttons size="large">
-          <ion-button size="large" slot="end" fill="solid" color="teritary" (click)="openDetail(sparte.id)">
-            <ion-icon name="information-circle"></ion-icon>
-          </ion-button>
-        </ion-buttons>         
-      </ion-item>
-      <div *ngFor="let bereitschaft of bereitschaften">
-        <ion-item *ngIf="bereitschaft.spartefk == sparte.id">
-          <ion-label>
-            {{bereitschaft.name}}
-          </ion-label>
-          <ion-buttons size="large">
-            <ion-button (click)="dialNumber(bereitschaft.tel1a)" disabled="{{bereitschaft.tel1a==''}}" slot="end" fill="solid" color="primary">1
-              <ion-icon name="call" slot="icon-only"></ion-icon>
-            </ion-button>
-            <ion-button  disabled="{{bereitschaft.tel2a==''}}" slot="end" fill="solid" color="primary">2
-              <ion-icon name="call" slot="icon-only"></ion-icon>
-            </ion-button>
-            <ion-button disabled="{{bereitschaft.tel3a==''}}" slot="end" fill="solid" color="primary">3
-              <ion-icon name="call" slot="icon-only"></ion-icon>
-            </ion-button>                    
-          </ion-buttons>
-        </ion-item>         
-      </div>  
-    </ion-card>
-  </div>
+	<div *ngFor="let sparte of sparten">
+		<ion-card>
+			<ion-item color="secondary">
+				<ion-label [ngStyle]="{'color':sparte.id === 9001 ? 'red' : 'white'}">{{ sparte.titel }}</ion-label>
+				<!-- <ion-label>{{sparte.titel}}</ion-label> -->
+				<ion-buttons size="large">
+					<ion-button size="large" slot="end" fill="solid" color="teritary" (click)="openDetail(sparte.id)">
+						<ion-icon name="information-circle"></ion-icon>
+					</ion-button>
+				</ion-buttons>
+			</ion-item>
+			<div *ngFor="let bereitschaft of bereitschaften">
+				<ion-item *ngIf="bereitschaft.spartefk == sparte.id">
+					<ion-label>
+						{{bereitschaft.name}}
+					</ion-label>
+					<ion-buttons size="large">
+						<ion-button (click)="dialNumber(bereitschaft.tel1a)" disabled="{{bereitschaft.tel1a==''}}"
+							slot="end" fill="solid" color="primary">1
+							<ion-icon name="call" slot="icon-only"></ion-icon>
+						</ion-button>
+						<ion-button disabled="{{bereitschaft.tel2a==''}}" slot="end" fill="solid" color="primary">2
+							<ion-icon name="call" slot="icon-only"></ion-icon>
+						</ion-button>
+						<ion-button disabled="{{bereitschaft.tel3a==''}}" slot="end" fill="solid" color="primary">3
+							<ion-icon name="call" slot="icon-only"></ion-icon>
+						</ion-button>
+					</ion-buttons>
+				</ion-item>
+			</div>
+		</ion-card>
+	</div>
 </ion-content>

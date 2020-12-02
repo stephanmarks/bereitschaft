@@ -65,7 +65,12 @@ export class DataService {
       titel: 'XTN Waldstadt ausf. Ber. Leitungstechnik',
       checked: false,
       sort: 10,
-      new: false}
+      new: false},
+    { id: 9001,
+      titel: 'Magscheidt',
+      checked: true,
+      sort: 10,
+      new: false}      
   ];
 
   bereitschaften: Array<any> = [
@@ -323,6 +328,21 @@ export class DataService {
       tel2b: "+49 171 9727622",
       tel3b: "+49 176 9234532",
       mail: "juergen.jung@firma.com"
+    },
+    {
+      id: 5011,
+      spartefk: 9001,
+      name: "Franz Fremdfirma",
+      date: "2020-12-02T00:00:00.000Z",
+      timestart: "00:00",
+      timeend: "24:00",
+      tel1a: "+49 123 966911",
+      tel2a: "+49 345 6564564",
+      tel3a: "",
+      tel1b: "",
+      tel2b: "",
+      tel3b: "",
+      mail: "franz@fremdfirma.com"
     }
   ];
 
