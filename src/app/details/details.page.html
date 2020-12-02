@@ -1,72 +1,74 @@
 <ion-header>
-  <ion-toolbar color="primary">
-      <ion-buttons slot="start">
-          <ion-back-button defaultHref="" text=""></ion-back-button>
-      </ion-buttons>
-    <ion-title>{{sparte[0].titel}}</ion-title>
-  </ion-toolbar>
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="" text=""></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{sparte[0].titel}}</ion-title>
+	</ion-toolbar>
 </ion-header>
 
-  <ion-content>
-    <div *ngFor="let bereitschaft of bereitschaften">
-      <ion-card>
-        <ion-item color="secondary">
-          <ion-label>{{bereitschaft.timestart}} - {{bereitschaft.timeend}} {{bereitschaft.name}}</ion-label>
-        </ion-item>
-        <ion-grid>
-            <ion-row>
-              <ion-col size="0.7">
-                <ion-icon name="call"></ion-icon>
-              </ion-col>
-              <ion-col  text-center>
-                <ion-icon name="sunny"></ion-icon>
-              </ion-col>
-              <ion-col text-center>
-                <ion-icon name="moon"></ion-icon> 
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="0.7">
-                1            
-              </ion-col>            
-              <ion-col>
-                {{bereitschaft.tel1a}}
-              </ion-col>
-              <ion-col>
-                {{bereitschaft.tel1b}}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="0.7">
-                2              
-              </ion-col>            
-              <ion-col>
-                {{bereitschaft.tel2a}}
-              </ion-col>
-              <ion-col>
-                {{bereitschaft.tel2b}}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="0.7">
-                3              
-              </ion-col>            
-              <ion-col>
-                {{bereitschaft.tel3a}}
-              </ion-col>
-              <ion-col>
-                {{bereitschaft.tel3b}}
-              </ion-col>
-            </ion-row>          
-            <ion-row>
-              <ion-col size="0.7">
-                <ion-icon name="mail"></ion-icon>              
-              </ion-col>                 
-              <ion-col>
-                {{bereitschaft.mail}}
-              </ion-col>
-            </ion-row>          
-          </ion-grid> 
-      </ion-card>
-    </div>
-  </ion-content>  
+<ion-content>
+	<div *ngFor="let bereitschaft of bereitschaften">
+		<ion-card>
+			<ion-item color="secondary">
+				<ion-label>{{bereitschaft.timestart}} - {{bereitschaft.timeend}} {{bereitschaft.name}}
+					<ion-icon name="trail-sign-outline"></ion-icon>
+				</ion-label>
+			</ion-item>
+			<ion-grid>
+				<ion-row>
+					<ion-col size="0.7">
+						<ion-icon name="call"></ion-icon>
+					</ion-col>
+					<ion-col text-center>
+						<ion-icon name="sunny"></ion-icon>
+					</ion-col>
+					<ion-col text-center>
+						<ion-icon name="moon"></ion-icon>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col size="0.7">
+						1
+					</ion-col>
+					<ion-col>
+						{{bereitschaft.tel1a}}
+					</ion-col>
+					<ion-col>
+						{{bereitschaft.tel1b}}
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col size="0.7">
+						2
+					</ion-col>
+					<ion-col>
+						{{bereitschaft.tel2a}}
+					</ion-col>
+					<ion-col>
+						{{bereitschaft.tel2b}}
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col size="0.7">
+						3
+					</ion-col>
+					<ion-col>
+						{{bereitschaft.tel3a}}
+					</ion-col>
+					<ion-col>
+						{{bereitschaft.tel3b}}
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col size="0.7">
+						<ion-icon name="mail"></ion-icon>
+					</ion-col>
+					<ion-col>
+						{{bereitschaft.mail}}
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</ion-card>
+	</div>
+</ion-content>
