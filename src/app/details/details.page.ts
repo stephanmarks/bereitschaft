@@ -17,7 +17,7 @@ export class DetailsPage implements OnInit {
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.bereitschaften = this.dataService.getBereitschaftenBySparteDate(this.id, '2019-08-02T00:00:00.000Z' );
+    this.bereitschaften = this.dataService.getBereitschaftenBySparteDate(this.id, '2020-12-02T00:00:00.000Z' );
     // this.bereitschaften = this.dataService.getBereitschaftenBySparte(this.id);
     this.sparte = this.dataService.getSparteById(this.id);
   }
